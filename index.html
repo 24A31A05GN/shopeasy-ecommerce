@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEasy - E Commerce Store</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <div class="logo">ShopEasy</div>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+        onkeyup="searchProducts()">
+
+    <div class="nav-buttons">
+        <button onclick="toggleDarkMode()">🌙</button>
+        <button onclick="showSection('cartSection')">
+            Cart (<span id="cartCount">0</span>)
+        </button>
+
+        <button onclick="showSection('wishlistSection')">
+            Wishlist (<span id="wishCount">0</span>)
+        </button>
+
+        <button onclick="showSection('adminSection')">
+            Admin
+        </button>
+    </div>
+</nav>
+
+<!-- CATEGORY BAR -->
+
+<div class="categories">
+
+<div class="category">Mobiles</div>
+<div class="category">Electronics</div>
+<div class="category">Fashion</div>
+<div class="category">Books</div>
+<div class="category">Sports</div>
+<div class="category">Beauty</div>
+<div class="category">Home</div>
+<div class="category">Toys</div>
+
+</div>
+
+<!-- BANNER -->
+
+<section class="banner">
+
+<h1>Big Sale 50% OFF</h1>
+
+<p>Best Deals On Electronics, Fashion & More</p>
+
+</section>
+
+<!-- LOGIN -->
+
+<section class="card-section">
+
+<h2>User Login</h2>
+
+<input
+type="text"
+id="username"
+placeholder="Username">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<button onclick="login()">
+Login
+</button>
+
+<p id="loginMessage"></p>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section>
+
+<h2 class="heading">
+Featured Products
+</h2>
+
+<div id="productsContainer" class="products">
+
+</div>
+
+</section>
+
+<!-- CART -->
+
+<section
+id="cartSection"
+class="card-section hidden">
+
+<h2>Shopping Cart</h2>
+
+<ul id="cartList"></ul>
+
+<h3>Total: ₹<span id="totalPrice">0</span></h3>
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+</section>
+
+<!-- WISHLIST -->
+
+<section
+id="wishlistSection"
+class="card-section hidden">
+
+<h2>Wishlist</h2>
+
+<ul id="wishlist"></ul>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="card-section">
+
+<h2>Reviews & Ratings</h2>
+
+<input
+type="text"
+id="reviewInput"
+placeholder="Write review">
+
+<select id="rating">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+
+</select>
+
+<button onclick="addReview()">
+Submit Review
+</button>
+
+<ul id="reviewList"></ul>
+
+</section>
+
+<!-- ORDERS -->
+
+<section class="card-section">
+
+<h2>Orders</h2>
+
+<ul id="ordersList"></ul>
+
+</section>
+
+<!-- ADMIN -->
+
+<section
+id="adminSection"
+class="card-section hidden">
+
+<h2>Admin Dashboard</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<h3 id="productCount">0</h3>
+<p>Products</p>
+</div>
+
+<div class="stat-box">
+<h3 id="orderCount">0</h3>
+<p>Orders</p>
+</div>
+
+<div class="stat-box">
+<h3 id="revenue">0</h3>
+<p>Revenue</p>
+</div>
+
+</div>
+
+<h3>Add Product</h3>
+
+<input
+type="text"
+id="newProductName"
+placeholder="Product Name">
+
+<input
+type="number"
+id="newProductPrice"
+placeholder="Price">
+
+<button onclick="addProduct()">
+Add Product
+</button>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
